@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
 
-import exampleReducer from './exampleModule/exampleReducer';
-import { storeKeys } from '../utils/constants';
+import appStateReducer from './appStateModule/reducer';
+import propertyReducer from './propertiesModule/reducer';
 
 
 export default combineReducers({
-  [storeKeys.example.storeMapName]: exampleReducer
+  appState: appStateReducer,
+  properties: propertyReducer
 });

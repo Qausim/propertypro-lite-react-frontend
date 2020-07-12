@@ -1,0 +1,21 @@
+.homepage .homepage-top {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../../../assets/pxhouse-luxury-villa-swimming-pool-chris-goodwin-sm.jpg);
+  box-shadow: inset 0 0 0 1000px rgba(37, 37, 38, .5);
+}
+
+.homepage .cities-summary-stats-wrapper::-webkit-scrollbar {
+  display: none;
+  width: 100%;
+}
+
+.homepage .featured-properties .home-icon {
+  color: blue;
+}
+
+@media screen and (min-width: 768px) {
+  .homepage-top {
+    background-image: url(../../../assets/pxhouse-luxury-villa-swimming-pool-chris-goodwin-lg.jpg);
+  }
+}
