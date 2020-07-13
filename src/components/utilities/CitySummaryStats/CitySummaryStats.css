@@ -1,3 +1,7 @@
+.city-summary-stat-item {
+  width: 100% !important;
+}
+
 .city-summary-stat-item .icon {
   color: green;
   margin-right: 8px;

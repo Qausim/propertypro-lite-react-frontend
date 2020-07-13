@@ -6,6 +6,12 @@
   --header-height: calc(60px + calc(2 * var(--padding-md)));
 }
 
+body {
+  margin-right:auto !important;
+  margin-left: auto !important;
+  max-width: 1800px;
+}
+
 .app-header {
   z-index: 10;
 }

@@ -8,7 +8,10 @@ import { formatMoneyValue } from '../../../utils/textUtils';
 const CitySummaryStatItem = ({ city }) => {
   const childBorder = '1px solid #CCC';
   return (
-    <Box px='var(--padding-md)' className='city-summary-stat-item'>
+    <Box
+      px='var(--padding-md)'
+      className='city-summary-stat-item'
+    >
       <Image
         w='100%'
         h='300px'
