@@ -18,7 +18,7 @@ const AppHeader = () => {
       p='var(--padding-md)'
       backgroundColor='#252526'
       onClick={() => { if (isOpen) setIsOpen(false); }}
-      className={`${isOpen ? 'open ' : ''}app-header js-space-between align-center`}
+      className={`${isOpen ? 'open ' : ''}app-header js-space-between align-center pos-sticky`}
     >
       <Flex className='align-center menu-logo-wrapper'>
         <Box

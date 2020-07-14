@@ -8,10 +8,7 @@ import { formatMoneyValue } from '../../../utils/textUtils';
 const CitySummaryStatItem = ({ city }) => {
   const childBorder = '1px solid #CCC';
   return (
-    <Box
-      px='var(--padding-md)'
-      className='city-summary-stat-item'
-    >
+    <Box className='city-summary-stat-item'>
       <Image
         w='100%'
         h='300px'
@@ -22,8 +19,8 @@ const CitySummaryStatItem = ({ city }) => {
         borderBottom='none'
       />
       <Box
-        border={childBorder}
         borderTop='none'
+        border={childBorder}
         p='var(--padding-md)'
         className='text--capitalize'
       >

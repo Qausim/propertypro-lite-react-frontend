@@ -1,8 +1,9 @@
 import React from 'react';
-import { Grid } from '@chakra-ui/core';
 
 import './CitySummaryStats.css';
 import CitySummaryStatItem from './CitySummaryStatItem';
+import Carousel from '../Carousel';
+import { getDefaultCarouselChevrons } from '../../../utils/uiUtils';
 
 
 const CitySummaryStats = () => {
@@ -50,17 +51,14 @@ const CitySummaryStats = () => {
       image: require('../../../assets/preview-mapz-port-harcourt.png')
     },
   ];
-  const cityCount = cityStats.length;
-
+  const sizeMap = [
+    { num: 1, size: 700 },
+    { num: 2, size: 1100 },
+  ];
   return (
-    <Grid
-      className='city-summary-stats'
-      gridTemplateColumns={[
-        `repeat(${cityCount}, 100%)`,
-        `repeat(${cityCount}, 50%)`,
-        `repeat(${cityCount}, 50%)`,
-        `repeat(${cityCount}, calc(100% / 3))`
-      ]}
+    <Carousel
+      {...{ sizeMap, defaultNumOfCards: 3, gutter: 35 }}
+      { ...getDefaultCarouselChevrons() }
     >
       {
         cityStats.map((city, index) => {
@@ -69,7 +67,7 @@ const CitySummaryStats = () => {
           )
         })
       }
-    </Grid>
+    </Carousel>
   );
 }
  

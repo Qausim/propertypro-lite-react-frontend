@@ -1,0 +1,1 @@
+export const fillArray = (length, content) => new Array(length).fill(content);

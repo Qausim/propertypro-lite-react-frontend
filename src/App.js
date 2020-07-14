@@ -4,6 +4,7 @@ import { ThemeProvider, CSSReset, Box } from '@chakra-ui/core';
 
 import './App.css';
 import AppRoutes from './appRoutes';
+import Footer from './components/utilities/Footer';
 import customTheme from './config/chakraThemeConfig';
 import AppHeader from './components/utilities/AppHeader';
 import AppSpinner from './components/utilities/AppSpinner';
@@ -19,6 +20,7 @@ function App() {
         <Box as='main'>
           <AppRoutes />
         </Box>
+        <Footer />
       </ThemeProvider>
     </BrowserRouter>
   );
