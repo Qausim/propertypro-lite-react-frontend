@@ -1,0 +1,7 @@
+.app-logo-wrapper:hover {
+  cursor: pointer;
+}
+
+.app-logo {
+  background-image: url(../../../assets/icons/home-icon.svg);
+}
