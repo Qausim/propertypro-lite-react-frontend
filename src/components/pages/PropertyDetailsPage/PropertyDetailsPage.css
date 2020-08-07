@@ -1,0 +1,20 @@
+.property-details .contact-agent-form .icon,
+.property-details .property-location .icon,
+.property-details .property-features .icon {
+  color: var(--some-blue);
+}
+
+.property-details .images-and-summary-section .text--deleted {
+  color: var(--light-gray);
+}
+
+.property-details .images-and-summary-section .prices > *::before {
+  content: '₦';
+  margin-right: 4px;
+}
+
+@media screen and (max-width: 695px) {
+  .property-details .images-and-summary-section .prices {
+    margin-top: 1em;
+  }
+}

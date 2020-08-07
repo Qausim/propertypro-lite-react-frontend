@@ -16,7 +16,7 @@ const PropertyGrid = ({ properties } = { properties: [] }) => {
   return (
     <Grid
       className="property-grid"
-      rowGap='var(--padding-lg)'
+      rowGap='var(--padding-md)'
       gridTemplateColumns={
         ['repeat(1, 1fr)'].concat(fillArray(3, 'repeat(2, 1fr)').concat('repeat(4, 1fr)'))
       }
@@ -25,7 +25,7 @@ const PropertyGrid = ({ properties } = { properties: [] }) => {
         return (
           <Box
             key={index}
-            p='var(--padding-md)'
+            p='var(--padding-sm)'
             className="property-grid-item hover-shadow"
           >
             <Image
@@ -36,7 +36,7 @@ const PropertyGrid = ({ properties } = { properties: [] }) => {
               src={property.image}
             />
             <Text
-              py='var(--padding-md)'
+              py='var(--padding-sm)'
               className='text--bold'
             >
               {property.title}
@@ -45,7 +45,7 @@ const PropertyGrid = ({ properties } = { properties: [] }) => {
             <Grid
               color='#888888'
               gridGap='32px'
-              py='var(--padding-md)'
+              py='var(--padding-sm)'
               gridTemplateColumns='repeat(4, 1fr)'
             >
               {

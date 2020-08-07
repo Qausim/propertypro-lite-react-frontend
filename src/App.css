@@ -1,9 +1,22 @@
 :root {
-  --padding-sm: 8px;
-  --padding-md: 16px;
-  --padding-lg: 32px;
+  --padding-xs: 8px;
+  --padding-sm: 16px;
+  --padding-md: 32px;
+  --padding-lg: 64px;
+  --padding-mdu: 24px;
+  --light-gray: #ccc;
   --some-blue: #234DD4;
-  --header-height: calc(60px + calc(2 * var(--padding-md)));
+  --header-height: calc(60px + var(--padding-sm));
+}
+
+#root {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+#root > main {
+  flex-grow: 1;
 }
 
 body {
@@ -23,6 +36,10 @@ body {
 footer {
   position: sticky;
   bottom: 0px;
+}
+
+.text--center {
+  text-align: center;
 }
 
 .text--capitalize {
@@ -49,7 +66,7 @@ footer {
   flex-direction: column;
 }
 
-.js-space-between {
+.js-between {
   justify-content: space-between;
 }
 

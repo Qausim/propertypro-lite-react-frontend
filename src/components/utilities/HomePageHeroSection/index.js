@@ -5,7 +5,7 @@ import { Box, Heading, Flex, Text, Grid } from '@chakra-ui/core';
 import { fillArray } from '../../../utils/arrayUtils';
 
 
-const HomePageExpoSection = ({ px }) => {
+const HomePageHeroSection = ({ px }) => {
   return (
     <Flex
         py='5em'
@@ -18,7 +18,7 @@ const HomePageExpoSection = ({ px }) => {
       >
         <Grid
           className='grid'
-          gap='var(--padding-lg)'
+          gap='var(--padding-md)'
           templateColumns={fillArray(2, 'repear(1, 1fr)').concat('repeat(2, 1fr)')}
         >
         {
@@ -48,21 +48,21 @@ const HomePageExpoSection = ({ px }) => {
                 key={index}
                 color='white'
                 align='center'
-                p='var(--padding-lg)'
+                p='var(--padding-md)'
                 direction={fillArray(3, 'column').concat('row')}
               >
                 <Box
                   as={el.icon}
                   size='80px'
-                  mr='var(--padding-lg)'
-                  mb={fillArray(3, 'var(--padding-lg)').concat('0px')}
+                  mr='var(--padding-md)'
+                  mb={fillArray(3, 'var(--padding-md)').concat('0px')}
                 />
                 <Box width={fillArray(3).concat('70%')}>
                   <Heading
                     as='h2'
                     fontSize='1.8em'
                     textAlign='center'
-                    mb='var(--padding-md)'
+                    mb='var(--)'
                   >
                     {el.title}
                   </Heading>
@@ -77,4 +77,4 @@ const HomePageExpoSection = ({ px }) => {
   );
 }
  
-export default HomePageExpoSection;
+export default HomePageHeroSection;

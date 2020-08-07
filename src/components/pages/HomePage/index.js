@@ -4,17 +4,18 @@ import { BsPersonPlus, BsPersonCheck } from "react-icons/bs";
 import { Box, Heading, Flex, Icon, Button } from "@chakra-ui/core";
 
 import "./HomePage.css";
+import { dividerMx } from "../../../utils/uiUtils";
+import { fillArray } from "../../../utils/arrayUtils";
 import PropertyGrid from "../../utilities/PropertyGrid";
 import WhyUsSection from "../../utilities/WhyUsSection";
 import SectionDivider from "../../utilities/SectionDivider";
 import HomeSearchForm from "../../utilities/HomeSearchForm";
 import CitySummaryStats from "../../utilities/CitySummaryStats";
+import HomePageExpoSection from "../../utilities/HomePageHeroSection";
 import FeaturedPropertiesCarousel from "../../utilities/FeaturedPropertiesCarousel";
-import HomePageExpoSection from "../../utilities/HomePageExpoSection";
-import { fillArray } from "../../../utils/arrayUtils";
+
 
 const HomePage = () => {
-  const dividerMx = ["var(--padding-md)", "var(--padding-lg)"];
   return (
     <Box className="homepage">
       <Box py="8em" as="section" className="homepage-top text--align-center">
@@ -34,7 +35,7 @@ const HomePage = () => {
           color="white"
           fontSize="2.8em"
           fontWeight="700"
-          px="var(--padding-md)"
+          px="var(--padding-sm)"
           className="text--capitalize text--bold"
         >
           find your dream home
@@ -153,13 +154,13 @@ const HomePage = () => {
         bg="#234DD4"
         color="white"
         px={dividerMx}
-        py="var(--padding-lg)"
+        py="var(--padding-md)"
         direction={fillArray(2, "column").concat("row")}
         align={fillArray(2, "center").concat("center")}
         justify={fillArray(2, "center").concat("space-around")}
       >
         {(() => {
-          const mb = fillArray(2, "var(--padding-lg)").concat("0px");
+          const mb = fillArray(2, "var(--padding-md)").concat("0px");
           return (
             <>
               <Box as={BsPersonCheck} size="120px" {...{ mb }} />
@@ -168,11 +169,11 @@ const HomePage = () => {
                 bg="white"
                 color="black"
                 borderRadius="0px"
-                px="var(--padding-lg)"
+                px="var(--padding-md)"
                 className="text--uppercase"
                 {...{ mb }}
               >
-                <Box size="24px" as={BsPersonPlus} mr="var(--padding-md)" />
+                <Box size="24px" as={BsPersonPlus} mr="var(--padding-sm)" />
                 register
               </Button>
             </>

@@ -6,7 +6,7 @@
 }
 
 .app-header nav a {
-  padding: var(--padding-md);
+  padding: var(--padding-sm);
 }
 
 .app-header a.active {
@@ -17,7 +17,7 @@
 @media screen and (max-width: 768px) {
   .app-header .menu-logo-wrapper {
     width: 100%;
-    margin-bottom: var(--padding-lg);
+    margin-bottom: var(--padding-md);
   }
 
   .app-header.open {
@@ -32,11 +32,6 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-  }
-
-  .app-header.open + main {
-    position: absolute;
-    top: var(--header-height);
   }
 }
 

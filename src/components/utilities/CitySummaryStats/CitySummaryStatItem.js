@@ -12,16 +12,16 @@ const CitySummaryStatItem = ({ city }) => {
       <Image
         w='100%'
         h='300px'
-        objectFit='cover'
         alt={city.name}
         src={city.image}
+        objectFit='cover'
         border={childBorder}
         borderBottom='none'
       />
       <Box
         borderTop='none'
         border={childBorder}
-        p='var(--padding-md)'
+        p='var(--padding-sm)'
         className='text--capitalize'
       >
         <Text

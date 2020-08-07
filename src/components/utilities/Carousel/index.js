@@ -1,7 +1,6 @@
+import { Box } from '@chakra-ui/core';
 import ItemsCarousel from 'react-items-carousel';
 import React, { useState, useEffect } from 'react';
-import { Box } from '@chakra-ui/core';
-
 
 
 const Carousel = (props) => {
@@ -23,7 +22,7 @@ const Carousel = (props) => {
   const computeNumberOfCards = () => {
     const bodyWidth = document.body.clientWidth;
     let set = false;
-    const mapSize = sizeMap.length;
+    const mapSize = sizeMap && sizeMap.length;
     for (let i = 0; i < mapSize; i++) {
       const { num, size } = sizeMap[i];
       if (bodyWidth <= size) {
@@ -46,6 +45,7 @@ const Carousel = (props) => {
       window.removeEventListener('resize', handleWindowResize);
     };
   });
+
   return (
     <Box>
       <ItemsCarousel
