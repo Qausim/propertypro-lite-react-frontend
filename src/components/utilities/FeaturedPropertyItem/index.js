@@ -35,7 +35,7 @@ const FeaturedPropertyItem = ({ property }) => {
         border={childBorder}
         src={property.image}
       />
-      <Box borderTop="none" border={childBorder} p="var(--padding-md)">
+      <Box borderTop="none" border={childBorder} p="var(--padding-sm)">
         <Text
           mb=".7em"
           fontSize="1.2em"

@@ -34,7 +34,7 @@
 }
 
 .home-search-form .form-control-group > * {
-  margin-bottom: var(--padding-md);
+  margin-bottom: var(--padding-sm);
 }
 
 .home-search-form .search-button:focus,
@@ -68,6 +68,6 @@
   }
   
   .home-search-form .form-control-group > :not(:last-child) {
-    margin-right: var(--padding-lg);
+    margin-right: var(--padding-md);
   }
 }

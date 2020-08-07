@@ -1,3 +1,6 @@
+const propertyRouteRoot = '/properties';
+
+export const appName = 'homely';
 export const baseURL = 'https://propertyprolite-api.herokuapp.com';
 
 export const routes = {
@@ -6,7 +9,8 @@ export const routes = {
   about: '/about',
   signup: '/signup',
   contact: '/contact',
-  properties: '/properties',
+  properties: propertyRouteRoot,
+  singleProperty: `${propertyRouteRoot}/:slug`
 };
 
 export const headerNavs = [

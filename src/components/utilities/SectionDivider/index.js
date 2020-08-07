@@ -2,11 +2,10 @@ import React from 'react';
 import { Divider } from '@chakra-ui/core';
 
 
-const SectionDivider = ({ color, mx, mt, mb }) => {
-  color = color ? color : '#CCCCCC';
+const SectionDivider = ({ color = '#CCCCCC', opacity, mx, mt, mb }) => {
   return (
     <Divider
-      {...{ borderColor: color, mx, mt, mb }}
+      {...{ borderColor: color, opacity, mx, mt, mb }}
     />
   );
 }

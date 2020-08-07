@@ -23,8 +23,8 @@ const PropertyTypeRadios = ({ filter, setFilter }) => {
           <Radio
             key={index}
             {...{ value }}
-            py='var(--padding-md)'
-            px='var(--padding-lg)'
+            py='var(--padding-sm)'
+            px='var(--padding-md)'
             className={`${value === filter.type ? 'active ' : ''}text--align-center`}
           >
             {text}

@@ -18,8 +18,7 @@ const HomeSearchForm = ({ filter }) => {
       <PropertyTypeRadios {...childrenProp} />
       <Flex 
         flexDir='column'
-        py='var(--padding-lg)'
-        px='var(--padding-lg)'
+        p='var(--padding-md)'
         className='form-control-group'
       >
         <PropertyCategorySelect {...childrenProp} />
@@ -28,11 +27,11 @@ const HomeSearchForm = ({ filter }) => {
           size='lg'
           color='white'
           bg='var(--some-blue)'
-          py='var(--padding-md)'
-          px='var(--padding-lg)'
+          py='var(--padding-sm)'
+          px='var(--padding-md)'
           className='search-button text--capitalize'
         >
-          <Icon name='search' mr='var(--padding-sm)' />
+          <Icon name='search' mr='var(--padding-xs)' />
           search
         </Button>
       </Flex>

@@ -17,7 +17,7 @@ function App() {
         <CSSReset />
         <AppSpinner />
         <AppHeader />
-        <Box as='main'>
+        <Box as='main' tabIndex='0'>
           <AppRoutes />
         </Box>
         <Footer />

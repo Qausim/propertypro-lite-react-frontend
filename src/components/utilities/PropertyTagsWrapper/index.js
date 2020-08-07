@@ -9,7 +9,7 @@ const PropertyTagsWrapper = ({ color, children }) => {
         spacing={4}
         color={color}
         pos='absolute'
-        p='var(--padding-sm) var(--padding-md)'
+        p='var(--padding-xs) var(--padding-sm)'
         className='property-tags-wrapper text--uppercase text--bold'
     >
       {children}

@@ -4,7 +4,7 @@ import { Button, Input } from '@chakra-ui/core';
 
 const NewsLetterForm = ({ inputBg }) => {
   const universalProps = {
-    borderRadius: '0px', mb: 'var(--padding-sm)',
+    borderRadius: '0px', mb: 'var(--padding-xs)',
     color: 'white', w: '100%'
   };
   const inputProps = {

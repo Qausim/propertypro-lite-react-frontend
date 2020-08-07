@@ -14,11 +14,12 @@ const AppHeader = () => {
     <Flex
       top={0}
       as='header'
+      tabIndex='0'
       color='white'
-      p='var(--padding-md)'
+      p='var(--padding-sm)'
       backgroundColor='#252526'
       onClick={() => { if (isOpen) setIsOpen(false); }}
-      className={`${isOpen ? 'open ' : ''}app-header js-space-between align-center pos-sticky`}
+      className={`${isOpen ? 'open ' : ''}app-header js-between align-center pos-sticky`}
     >
       <Flex className='align-center menu-logo-wrapper'>
         <Box
@@ -33,8 +34,8 @@ const AppHeader = () => {
         />
         <AppLogo imgSize='40px' />
       </Flex>
-      <HeaderNavs navs={headerNavs} />
-      <HeaderNavs navs={authNavs} />
+      <HeaderNavs navs={headerNavs} label='main navigation' />
+      <HeaderNavs navs={authNavs} label='authentication pages navigation' />
     </Flex>
   );
 }
