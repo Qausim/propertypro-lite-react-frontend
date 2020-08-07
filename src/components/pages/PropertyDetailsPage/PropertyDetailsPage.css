@@ -13,6 +13,10 @@
   margin-right: 4px;
 }
 
+.property-details .images-and-summary-section .prices :not(.text--deleted) {
+  font-size: 2em;
+}
+
 @media screen and (max-width: 695px) {
   .property-details .images-and-summary-section .prices {
     margin-top: 1em;

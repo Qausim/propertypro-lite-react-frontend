@@ -55,7 +55,7 @@ const PropertyImagesAndSummary = ({ property, py }) => {
                   {formatMoneyValue(price)}
                 </Text>
               ));
-              if (hasDiscount) res.push(<Text key={res.length + 1} fontSize='2em'>{formatMoneyValue(price * (1 - discount))}</Text>);
+              if (hasDiscount) res.push(<Text key={res.length + 1}>{formatMoneyValue(price * (1 - discount))}</Text>);
 
               return res;
             })()
