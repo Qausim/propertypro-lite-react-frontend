@@ -1,5 +1,5 @@
 import React from "react";
-import { Package, Key, Clock, Crop } from "react-feather";
+import { FiPackage, FiKey, FiClock, FiCrop } from "react-icons/fi";
 import { Box, Image, Text, Flex, Icon, Tag } from "@chakra-ui/core";
 
 import "./FeaturedPropertyItem.css";
@@ -10,10 +10,10 @@ import SectionDivider from "../SectionDivider";
 const FeaturedPropertyItem = ({ property }) => {
   const childBorder = "1px solid #CCC";
   const icons = {
-    rooms: Key,
-    size: Crop,
-    published: Clock,
-    category: Package,
+    rooms: FiKey,
+    size: FiCrop,
+    published: FiClock,
+    category: FiPackage,
   };
 
   return (

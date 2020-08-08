@@ -1,7 +1,3 @@
-.app-logo-wrapper:hover {
+.app-logo-wrapper.clickable:hover {
   cursor: pointer;
-}
-
-.app-logo {
-  background-image: url(../../../assets/icons/home-icon.svg);
 }

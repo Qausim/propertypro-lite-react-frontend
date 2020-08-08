@@ -1,18 +1,18 @@
 import React from 'react';
 import { Button, Icon } from '@chakra-ui/core';
-import { ChevronLeft, ChevronRight } from 'react-feather';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 
 export const getDefaultCarouselChevrons = (iconSize = '24px', bg = 'white') => {
   return {
     leftChevron: (
       <Button {...{ bg }} aria-label='previous'>
-        <Icon as={ChevronLeft} size={iconSize} />
+        <Icon as={FiChevronLeft} size={iconSize} />
       </Button>
     ),
     rightChevron: (
       <Button {...{ bg }} aria-label='next'>
-        <Icon as={ChevronRight} size={iconSize} />
+        <Icon as={FiChevronRight} size={iconSize} />
       </Button>
     )
   };

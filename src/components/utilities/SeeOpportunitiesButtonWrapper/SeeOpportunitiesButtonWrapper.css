@@ -1,0 +1,5 @@
+.see-opportunities-button-wrapper a {
+  color: #ffffff;
+  background: var(--some-blue);
+  padding: var(--padding-xs) var(--padding-sm);
+}

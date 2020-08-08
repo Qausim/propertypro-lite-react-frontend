@@ -1,0 +1,52 @@
+.about-us-page .banner {
+  background-size: cover;
+  background-position-y: -12em !important;
+  background-repeat: no-repeat !important;
+  background: url(../../../assets/pexels-burak-k-1098982-sm.jpg);
+}
+
+.about-us-page nav li {
+  padding: var(--padding-xs) var(--padding-sm);
+  margin: .5em 0px;
+}
+
+.about-us-page nav li:hover {
+  color: #ffffff;
+  background: var(--some-green);
+}
+
+.about-us-page .navbar a:hover {
+  text-decoration: none;
+}
+
+.about-us-page section {
+  padding-top: 1.2em;
+  padding-bottom: 2em;
+}
+
+.about-us-page section:last-child {
+  margin-bottom: 2em;
+}
+
+.about-us-page section h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 1.5em;
+  text-transform: capitalize;
+}
+
+
+@media screen and (min-width: 30em) {
+  .about-us-page .banner {
+    background-position-y: -32em !important;
+    background: url(../../../assets/pexels-burak-k-1098982-md.jpg);
+  }  
+}
+
+@media screen and (min-width: 48em) {
+  .about-us-page .banner {
+    background-position-y: -48em !important;
+    background: url(../../../assets/pexels-burak-k-1098982-lg.jpg);
+  }  
+}
+

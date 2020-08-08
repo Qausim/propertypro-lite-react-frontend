@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, DollarSign } from 'react-feather';
+import { FiHome, FiDollarSign } from 'react-icons/fi';
 import { Box, Image, Text, Icon, Flex } from '@chakra-ui/core';
 
 import { formatMoneyValue } from '../../../utils/textUtils';
@@ -31,11 +31,11 @@ const CitySummaryStatItem = ({ city }) => {
           {city.name}
         </Text>
         <Flex className='align-center' mb='4px'>
-          <Icon as={Home} className='icon' />
+          <Icon as={FiHome} className='icon' />
           <span className='text--bold'>listings:</span>&nbsp;{city.listings}
         </Flex>
         <Flex className='align-center'>
-          <Icon as={DollarSign} className='icon' />
+          <Icon as={FiDollarSign} className='icon' />
           <span className='text--bold'>price:</span>&nbsp;₦{formatMoneyValue(city.minPrice)} - ₦{formatMoneyValue(city.maxPrice)}
         </Flex>
       </Box>

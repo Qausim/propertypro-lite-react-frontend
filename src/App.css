@@ -6,7 +6,8 @@
   --padding-mdu: 24px;
   --light-gray: #ccc;
   --some-blue: #234DD4;
-  --header-height: calc(60px + var(--padding-sm));
+  --some-green: #43C370;
+  --header-height: calc(60px + calc(2 * var(--padding-sm)));
 }
 
 #root {
@@ -31,6 +32,10 @@ body {
 
 .app-spinner {
   z-index: 11;
+}
+
+h1 {
+  font-size: 2.5rem !important;
 }
 
 footer {

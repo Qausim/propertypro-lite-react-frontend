@@ -1,8 +1,8 @@
 import React from 'react';
 import { BsCrop } from 'react-icons/bs';
 import { GiHomeGarage } from 'react-icons/gi';
-import { Box, Flex, Text, Image, Grid } from '@chakra-ui/core';
 import { FaBed, FaBath } from 'react-icons/fa';
+import { Box, Flex, Text, Image, Grid, Heading } from '@chakra-ui/core';
 
 import Carousel from '../Carousel';
 import { fillArray } from '../../../utils/arrayUtils';
@@ -30,13 +30,13 @@ const PropertyImagesAndSummary = ({ property, py }) => {
         justify='space-between'
         mb={`calc(${py} / 1.5)`}
       >
-        <Text
+        <Heading
           as='h2'
           fontSize='2rem'
           className='text--capitalize text--bold'
         >
           {property.title}
-        </Text>
+        </Heading>
         <Flex
           align='inherit'
           className='prices'
@@ -75,8 +75,8 @@ const PropertyImagesAndSummary = ({ property, py }) => {
             >
               <Image
                 src={img}
-                w={['100vw', '80vw', '60vw']}
                 objectFit='cover'
+                w={['100vw', '80vw', '60vw']}
               />
             </Flex>
           ))
