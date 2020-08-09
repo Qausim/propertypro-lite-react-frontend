@@ -1,7 +1,9 @@
 import React from 'react';
+import { Box, Text, ListItem, Image, Heading } from '@chakra-ui/core';
+
+import CustomGrid from '../CustomGrid';
 import { dividerMx } from '../../../utils/uiUtils';
 import SocialMediaLinkGroup from '../SocialMediaLinkGroup';
-import { Box, Text, Grid, ListItem, Image, Heading } from '@chakra-ui/core';
 
 
 const AboutUsLeadershipSection = ({ mt }) => {
@@ -41,11 +43,11 @@ const AboutUsLeadershipSection = ({ mt }) => {
       id='leadership'
     >
       <Heading as='h2' pt='1em'>our leadership</Heading>
-      <Grid
+      <CustomGrid
         as='ul'
         gap='2em'
         listStyleType='none'
-        templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(3, 1fr)']}
+        colNumber={[1, 2, 3]}
       >
         {
           users.map(({ firstName, lastName, role, image, socialLinks }, index) => {
@@ -80,7 +82,7 @@ const AboutUsLeadershipSection = ({ mt }) => {
             );
           })
         }
-      </Grid>
+      </CustomGrid>
     </Box>
   );
 }

@@ -1,8 +1,9 @@
 import React from 'react';
-import { Box, Grid, Heading } from '@chakra-ui/core';
+import { Box, Heading } from '@chakra-ui/core';
 
 import './PropertyDetailsPage.css';
 import { dividerMx } from '../../../utils/uiUtils';
+import CustomGrid from '../../utilities/CustomGrid';
 import { fillArray } from '../../../utils/arrayUtils';
 import usePageTitle from '../../../hooks/usePageTitle';
 import ContactAgentForm from '../../utilities/ContactAgentForm';
@@ -67,11 +68,11 @@ const PropertyDetailsPage = () => {
       <Heading as='h1' pos='absolute' top='-1000px'>{property.title}</Heading>
       <PropertyDetailsTopBanner {...{ property }} />
       <PropertyImagesAndSummary {...{ property, py: `calc(${sectionPaddingY} / 2)` }} />
-      <Grid
+      <CustomGrid
         px={dividerMx}
         py={sectionPaddingY}
         rowGap='var(--padding-md)'
-        templateColumns={fillArray(2, 'repeat(1, 1fr)').concat('repeat(12, 1fr)')}
+        colNumber={fillArray(2, 1).concat(12)}
       >
         <PropertyDetailsLHS
           {...{
@@ -87,7 +88,7 @@ const PropertyDetailsPage = () => {
           my={fillArray(2, '2em').concat('-2.5em')}
           gridColumn={fillArray(2, '1/2').concat('9/13')}
         />
-      </Grid>
+      </CustomGrid>
     </Box>
   );
 }

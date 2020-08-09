@@ -1,9 +1,12 @@
 import React from 'react';
 import {
-  Box, Grid, Text, Link, Image, Stack, InputGroup, InputLeftAddon, Input, Textarea, Button, Icon, Flex
+  Box, Text, Link, Image, Stack, InputGroup,
+  InputLeftAddon, Input, Textarea, Button, Icon, Flex
 } from '@chakra-ui/core';
 import { FaUser } from 'react-icons/fa';
 import { MdVerifiedUser } from 'react-icons/md';
+
+import CustomGrid from '../CustomGrid';
 import { fillArray } from '../../../utils/arrayUtils';
 
 
@@ -23,9 +26,9 @@ const ContactAgentForm = ({ agent, gridColumn, my, ml, mr }) => {
         boxShadow='0 8px 16px rgba(0,0,0,.25)'
         pos={fillArray(2, 'static').concat('sticky')}
       >
-        <Grid
+        <CustomGrid
+          colNumber={[2]}
           columnGap='var(--padding-sm)'
-          templateColumns='repeat(2, 1fr)'
           gridTemplateRows='repeat(1, 60px)'
         >
           <Box>
@@ -60,7 +63,7 @@ const ContactAgentForm = ({ agent, gridColumn, my, ml, mr }) => {
               aria-label={agent.companyName}
             />
           </Flex>
-        </Grid>
+        </CustomGrid>
 
         <Box as='form' mt='var(--padding-md)'>
           <Stack>

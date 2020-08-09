@@ -1,7 +1,8 @@
 import React from 'react';
 import { FaHome, FaSearch } from 'react-icons/fa';
-import { Box, Heading, Flex, Text, Grid } from '@chakra-ui/core';
+import { Box, Heading, Flex, Text } from '@chakra-ui/core';
 
+import CustomGrid from '../CustomGrid';
 import { fillArray } from '../../../utils/arrayUtils';
 
 
@@ -16,10 +17,10 @@ const HomePageHeroSection = ({ px }) => {
         justify='center'
         className='expo-section'
       >
-        <Grid
+        <CustomGrid
           className='grid'
           gap='var(--padding-md)'
-          templateColumns={fillArray(2, 'repear(1, 1fr)').concat('repeat(2, 1fr)')}
+          colNumber={fillArray(2, 1).concat(2)}
         >
         {
           [
@@ -72,7 +73,7 @@ const HomePageHeroSection = ({ px }) => {
             );
           })
         }
-        </Grid>
+        </CustomGrid>
       </Flex>
   );
 }

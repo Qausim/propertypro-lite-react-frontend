@@ -7,6 +7,7 @@ export const routes = {
   home: '/',
   login: '/login',
   about: '/about',
+  agents: '/agents',
   signup: '/signup',
   contact: '/contact',
   properties: propertyRouteRoot,

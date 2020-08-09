@@ -1,15 +1,16 @@
 import React from 'react';
-import { Box, Heading, Grid, Image, Text, Flex } from '@chakra-ui/core';
+import { Box, Heading, Image, Text, Flex } from '@chakra-ui/core';
 
 import './AboutUsPage.css';
 import { dividerMx } from '../../../utils/uiUtils';
+import CustomGrid from '../../utilities/CustomGrid';
+import { fillArray } from '../../../utils/arrayUtils';
 import usePageTitle from '../../../hooks/usePageTitle';
 import SectionDivider from '../../utilities/SectionDivider';
 import AboutUsTopNavbar from '../../utilities/AboutUsTopNavbar';
 import AboutUsHistorySection from '../../utilities/AboutUsHistorySection';
 import AboutUsOfficesSection from '../../utilities/AboutUsOfficesSection';
 import AboutUsLeadershipSection from '../../utilities/AboutUsLeadershipSection';
-import { fillArray } from '../../../utils/arrayUtils';
 import SeeOpportunitiesButtonWrapper from '../../utilities/SeeOpportunitiesButtonWrapper';
 
 
@@ -18,13 +19,13 @@ const AboutUsPage = () => {
   const sectionMt = '2em';
 
   const TwoColumnsWrapperGrid = ({ children }) => (
-    <Grid
+    <CustomGrid
       rowGap='2.5em'
       columnGap='2em'
-      templateColumns={fillArray(2, 'repeat(1, 1fr)').concat('repeat(2, 1fr)')}
+      colNumber={fillArray(2, 1).concat(2)}
     >
       {children}
-    </Grid>
+    </CustomGrid>
   );
 
   return (

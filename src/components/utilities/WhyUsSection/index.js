@@ -1,7 +1,9 @@
 import React from "react";
 import { BsBuilding } from "react-icons/bs";
 import { MdPeopleOutline } from "react-icons/md";
-import { Box, Heading, Grid, Flex, Text } from "@chakra-ui/core";
+import { Box, Heading, Flex, Text } from "@chakra-ui/core";
+
+import CustomGrid from "../CustomGrid";
 import { fillArray } from "../../../utils/arrayUtils";
 
 const WhyUsSection = ({ px }) => {
@@ -16,14 +18,10 @@ const WhyUsSection = ({ px }) => {
       >
         why choose us
       </Heading>
-      <Grid
+      <CustomGrid
         columnGap="var(--padding-md)"
-        px={fillArray(2, "var(--padding-md)").concat(
-          "calc(3 * var(--padding-md))"
-        )}
-        templateColumns={fillArray(2, "repeat(1, 1fr)").concat(
-          "repeat(2, 1fr)"
-        )}
+        colNumber={fillArray(2, 1).concat(2)}
+        px={fillArray(2, "var(--padding-md)").concat("calc(3 * var(--padding-md))")}
       >
         {[
           {
@@ -74,7 +72,7 @@ const WhyUsSection = ({ px }) => {
             </Flex>
           );
         })}
-      </Grid>
+      </CustomGrid>
     </Box>
   );
 };

@@ -2,9 +2,10 @@ import React from 'react';
 import { BsCrop } from 'react-icons/bs';
 import { GiHomeGarage } from 'react-icons/gi';
 import { FaBed, FaBath } from 'react-icons/fa';
-import { Box, Flex, Text, Image, Grid, Heading } from '@chakra-ui/core';
+import { Box, Flex, Text, Image, Heading } from '@chakra-ui/core';
 
 import Carousel from '../Carousel';
+import CustomGrid from '../CustomGrid';
 import { fillArray } from '../../../utils/arrayUtils';
 import { formatMoneyValue } from '../../../utils/textUtils';
 import { getDefaultCarouselChevrons, dividerMx } from '../../../utils/uiUtils';
@@ -83,10 +84,10 @@ const PropertyImagesAndSummary = ({ property, py }) => {
         }
       </Carousel>
       <Flex justify='center'>
-        <Grid
+        <CustomGrid
           rowGap='var(--padding-sm)'
           columnGap='var(--padding-md)'
-          templateColumns={fillArray(2, 'repeat(2, 1fr)').concat('repeat(4, 1fr)')}
+          colNumber={fillArray(2, 2).concat(4)}
         >
           {
             Object.entries(icons).map(([key, icon]) => (
@@ -104,7 +105,7 @@ const PropertyImagesAndSummary = ({ property, py }) => {
               </Flex>
             ))
           }
-        </Grid>
+        </CustomGrid>
       </Flex>
     </Box>
   );

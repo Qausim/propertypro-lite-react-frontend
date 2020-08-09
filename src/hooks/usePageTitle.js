@@ -9,7 +9,6 @@ const usePageTitle = (title) => {
     document.title = `${capitalize(title)} - ${defaultTitle}`;
     return () => {
       document.title = defaultTitle;
-      console.log(document.title);
     }
   });
 }
