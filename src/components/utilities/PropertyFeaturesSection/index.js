@@ -1,6 +1,6 @@
 import React from 'react';
 import { GoFoldDown } from 'react-icons/go';
-import { Box, Text, Grid, Flex } from '@chakra-ui/core';
+import { Box, Text, Grid, Flex, Heading } from '@chakra-ui/core';
 import { MdSecurity, MdViewQuilt, MdFitnessCenter, MdHotTub, MdPets } from 'react-icons/md';
 import { FaSortNumericUpAlt, FaSwimmer, FaParking, FaWheelchair, FaAdjust } from 'react-icons/fa';
 import { GiPowerLightning, GiVacuumCleaner, GiHotSurface, GiFireplace, GiThermometerCold } from 'react-icons/gi';
@@ -20,12 +20,14 @@ const PropertyFeaturesSection = ({ property }) => {
       as='section'
       className='property-features'
     >
-      <Text
+      <Heading
         as='h3'
         mb='1.5rem'
         fontSize='1.6rem'
         className='text--capitalize text--bold'
-      >Facts and Features</Text>
+      >
+        Facts and Features
+      </Heading>
       <Grid
         rowGap='2em'
         columnGap='1em'

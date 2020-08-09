@@ -1,6 +1,6 @@
 import React from 'react';
 import { GoLocation } from 'react-icons/go';
-import { Box, Text, Flex } from '@chakra-ui/core';
+import { Box, Flex, Heading } from '@chakra-ui/core';
 
 import { fillArray } from '../../../utils/arrayUtils';
 
@@ -16,14 +16,14 @@ const PropertyLocationSection = ({ property }) => {
         mb='1.5rem'
         justify='space-between'
       >
-        <Text
+        <Heading
           as='h3'
           fontSize='1.6rem'
           className='text--capitalize text--bold'
           mb={fillArray(2, 'var(--padding-xs)').concat('0px')}
         >
           location
-          </Text>
+        </Heading>
         <Flex
           as='p'
           align='center'

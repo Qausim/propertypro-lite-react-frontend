@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { Link as RouterLink } from 'react-router-dom';
 import { Grid, Box, Stack, Heading, Link } from "@chakra-ui/core";
 
 import NewsLetterForm from "../NewsLetterForm";
@@ -37,7 +38,7 @@ const Footer = () => {
           {
             title: "quick links",
             links: [
-              { title: "About Us", link: "/" },
+              { title: "About Us", link: "/about" },
               { title: "Contact Us", link: "/" },
             ],
           },
@@ -60,7 +61,8 @@ const Footer = () => {
                 return (
                   <Fragment key={linkInd}>
                     <Link
-                      href={link.link}
+                      as={RouterLink}
+                      to={link.link}
                       fontSize=".9em"
                       color="#CCCCCC"
                       pb="var(--padding-xs)"

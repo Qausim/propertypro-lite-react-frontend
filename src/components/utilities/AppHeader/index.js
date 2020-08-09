@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu } from 'react-feather';
+import { FiMenu } from 'react-icons/fi';
 import { Flex, Box } from '@chakra-ui/core';
 
 import './AppHeader.css';
@@ -24,7 +24,7 @@ const AppHeader = () => {
       <Flex className='align-center menu-logo-wrapper'>
         <Box
           mr='auto'
-          as={Menu}
+          as={FiMenu}
           size='40px'
           onClick={(e) => {
             e.stopPropagation();
@@ -32,7 +32,7 @@ const AppHeader = () => {
           }}
           className='menu-button md-no-display'
         />
-        <AppLogo imgSize='40px' />
+        <AppLogo clickable={true} />
       </Flex>
       <HeaderNavs navs={headerNavs} label='main navigation' />
       <HeaderNavs navs={authNavs} label='authentication pages navigation' />

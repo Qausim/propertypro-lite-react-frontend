@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text, Grid } from '@chakra-ui/core';
+import { Box, Grid, Heading } from '@chakra-ui/core';
 
 import './PropertyDetailsPage.css';
 import { dividerMx } from '../../../utils/uiUtils';
@@ -64,7 +64,7 @@ const PropertyDetailsPage = () => {
 
   return (
     <Box className='property-details'>
-      <Text as='h1' pos='absolute' top='-1000px'>{property.title}</Text>
+      <Heading as='h1' pos='absolute' top='-1000px'>{property.title}</Heading>
       <PropertyDetailsTopBanner {...{ property }} />
       <PropertyImagesAndSummary {...{ property, py: `calc(${sectionPaddingY} / 2)` }} />
       <Grid

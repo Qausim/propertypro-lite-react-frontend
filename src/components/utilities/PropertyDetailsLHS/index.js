@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text } from '@chakra-ui/core';
+import { Box, Text, Heading } from '@chakra-ui/core';
 
 import SectionDivider from '../SectionDivider';
 import PropertyLocationSection from '../PropertyLocationSection';
@@ -15,14 +15,14 @@ const PropertyDetailsLHS = ({ pr, property, gridColumn }) => {
         as='section'
         className='property-description'
       >
-        <Text
+        <Heading
           as='h3'
           mb='1.5rem'
           fontSize='1.6rem'
           className='text--capitalize text--bold'
         >
           description
-        </Text>
+        </Heading>
         <Text as='p'>
           {property.description}
         </Text>

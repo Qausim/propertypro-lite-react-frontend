@@ -1,6 +1,6 @@
 import React from "react";
-import { Home, DollarSign, Flag } from "react-feather";
 import { BsPersonPlus, BsPersonCheck } from "react-icons/bs";
+import { FiHome, FiDollarSign, FiFlag } from "react-icons/fi";
 import { Box, Heading, Flex, Icon, Button } from "@chakra-ui/core";
 
 import "./HomePage.css";
@@ -74,7 +74,7 @@ const HomePage = () => {
             Featured Properties
           </Heading>
           <p className="text--uppercase d-flex align-center">
-            <Icon as={Home} mr="8px" size="32px" className="home-icon" />
+            <Icon as={FiHome} mr="8px" size="32px" className="home-icon" />
             <span className="text--bold">1,300+</span>&nbsp;available properties
           </p>
         </Flex>
@@ -93,7 +93,7 @@ const HomePage = () => {
             Recent Properties for Sale
           </Heading>
           <p className="text--uppercase d-flex align-center">
-            <Icon as={DollarSign} mr="8px" size="32px" className="home-icon" />
+            <Icon as={FiDollarSign} mr="8px" size="32px" className="home-icon" />
             all properties<span className="text--bold">&nbsp;for sale</span>
           </p>
         </Flex>
@@ -126,7 +126,7 @@ const HomePage = () => {
             Recent Properties for Rent
           </Heading>
           <p className="text--uppercase d-flex align-center">
-            <Icon as={Flag} mr="8px" size="32px" className="home-icon" />
+            <Icon as={FiFlag} mr="8px" size="32px" className="home-icon" />
             all properties for<span className="text--bold">&nbsp;for rent</span>
           </p>
         </Flex>
