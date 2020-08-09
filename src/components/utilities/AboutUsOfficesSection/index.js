@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import {
-  Box, Heading, Tabs, TabList, TabPanels, Tab, TabPanel, Grid, Image, Text
+  Box, Heading, Tabs, TabList, TabPanels, Tab, TabPanel, Image, Text
 } from '@chakra-ui/core';
 
+import CustomGrid from '../CustomGrid';
 import { dividerMx } from '../../../utils/uiUtils';
 import { fillArray } from '../../../utils/arrayUtils';
 
@@ -70,10 +71,10 @@ const AboutUsOfficesSection = ({ mt }) => {
       id='offices'
       px={dividerMx}
     >
-      <Grid
+      <CustomGrid
         rowGap='2.5em'
         columnGap='2em'
-        templateColumns={fillArray(2, 'repeat(1, 1fr)').concat('repeat(2, 1fr)')}
+        colNumber={fillArray(2, 1).concat(2)}
       >
         <Tabs variant='unstyled' onChange={index => setTabIndex(index)}>
           <Heading as='h2'>office locations</Heading>
@@ -89,7 +90,7 @@ const AboutUsOfficesSection = ({ mt }) => {
           src={offices[tabIndex].image}
           objectFit='cover'
         />
-      </Grid>
+      </CustomGrid>
     </Box>
   );
 }

@@ -3,8 +3,9 @@ import React from "react";
 import { GiHomeGarage } from 'react-icons/gi';
 import { FaBed, FaBath } from 'react-icons/fa';
 import { BsClockHistory } from 'react-icons/bs';
-import { Grid, Box, Image, Text, Flex } from "@chakra-ui/core";
+import { Box, Image, Text, Flex } from "@chakra-ui/core";
 
+import CustomGrid from "../CustomGrid";
 import SectionDivider from "../SectionDivider";
 import { fillArray } from "../../../utils/arrayUtils";
 
@@ -14,12 +15,10 @@ const PropertyGrid = ({ properties } = { properties: [] }) => {
   };
 
   return (
-    <Grid
+    <CustomGrid
       className="property-grid"
       rowGap='var(--padding-md)'
-      gridTemplateColumns={
-        ['repeat(1, 1fr)'].concat(fillArray(3, 'repeat(2, 1fr)').concat('repeat(4, 1fr)'))
-      }
+      colNumber={[1, ...fillArray(3, 2).concat(4)]}
     >
       {properties.map((property, index) => {
         return (
@@ -42,11 +41,11 @@ const PropertyGrid = ({ properties } = { properties: [] }) => {
               {property.title}
             </Text>
             <SectionDivider />
-            <Grid
-              color='#888888'
+            <CustomGrid
               gridGap='32px'
+              color='#888888'
+              colNumber={[4]}
               py='var(--padding-sm)'
-              gridTemplateColumns='repeat(4, 1fr)'
             >
               {
                 Object.keys(icons).map((key, innerInd) => (
@@ -59,11 +58,11 @@ const PropertyGrid = ({ properties } = { properties: [] }) => {
                   </Flex>
                 ))
               }
-            </Grid>
+            </CustomGrid>
           </Box>
         );
       })}
-    </Grid>
+    </CustomGrid>
   );
 };
 

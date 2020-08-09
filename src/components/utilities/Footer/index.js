@@ -1,7 +1,8 @@
 import React, { Fragment } from "react";
 import { Link as RouterLink } from 'react-router-dom';
-import { Grid, Box, Stack, Heading, Link } from "@chakra-ui/core";
+import { Box, Stack, Heading, Link } from "@chakra-ui/core";
 
+import CustomGrid from "../CustomGrid";
 import NewsLetterForm from "../NewsLetterForm";
 import { fillArray } from "../../../utils/arrayUtils";
 
@@ -9,13 +10,13 @@ import { fillArray } from "../../../utils/arrayUtils";
 const Footer = () => {
   return (
     <Box>
-      <Grid
+      <CustomGrid
         py="4em"
         bg="#303441"
         as="footer"
         rowGap='var(--padding-md)'
+        colNumber={[1, ...fillArray(2, 2), 4]}
         px={fillArray(2, "var(--padding-md)").concat("calc(2 * var(--padding-md))")}
-        templateColumns={["repeat(1, 1fr)", ...fillArray(2, "repeat(2, 1fr)"), "repeat(4, 1fr)"]}
       >
         {[
           {
@@ -88,7 +89,7 @@ const Footer = () => {
           </Heading>
           <NewsLetterForm inputBg='#454954' />
         </form>
-      </Grid>
+      </CustomGrid>
     </Box>
   );
 };
