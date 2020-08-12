@@ -1,9 +1,3 @@
-.property-details .contact-agent-form .icon,
-.property-details .property-location .icon,
-.property-details .property-features .icon {
-  color: var(--some-blue);
-}
-
 .property-details .images-and-summary-section .text--deleted {
   color: var(--light-gray);
 }

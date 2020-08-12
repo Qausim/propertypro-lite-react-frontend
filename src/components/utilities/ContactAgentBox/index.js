@@ -1,12 +1,9 @@
 import React from 'react';
-import {
-  Box, Text, Link, Image, Stack, InputGroup,
-  InputLeftAddon, Input, Textarea, Button, Icon, Flex
-} from '@chakra-ui/core';
-import { FaUser } from 'react-icons/fa';
 import { MdVerifiedUser } from 'react-icons/md';
+import { Box, Text, Link, Image, Flex } from '@chakra-ui/core';
 
 import CustomGrid from '../CustomGrid';
+import ContactForm from '../ContactForm';
 import { fillArray } from '../../../utils/arrayUtils';
 
 
@@ -64,61 +61,7 @@ const ContactAgentForm = ({ agent, gridColumn, my, ml, mr }) => {
             />
           </Flex>
         </CustomGrid>
-
-        <Box as='form' mt='var(--padding-md)'>
-          <Stack>
-            <InputGroup>
-              <InputLeftAddon>
-                <Box as={FaUser} className='icon' />
-              </InputLeftAddon>
-              <Input
-                isRequired
-                type='text'
-                bg='#EDF2F7'
-                placeholder='First Name, Last Name'
-                aria-label='Your name (first name, last name)'
-              />
-            </InputGroup>
-            <InputGroup>
-              <InputLeftAddon>
-                <Icon name='email' className='icon' />
-              </InputLeftAddon>
-              <Input
-                isRequired
-                type='email'
-                bg='#EDF2F7'
-                aria-label='Your email'
-                placeholder='Your email'
-              />
-            </InputGroup>
-            <InputGroup>
-              <InputLeftAddon>
-                <Icon name='phone' className='icon' />
-              </InputLeftAddon>
-              <Input
-                isRequired
-                type='tel'
-                bg='#EDF2F7'
-                aria-label='Your phone'
-                placeholder='Your phone'
-              />
-            </InputGroup>
-            <Textarea
-              h='150px'
-              isRequired
-              bg='#EDF2F7'
-              aria-label='Your message'
-              placeholder='Your message'
-            />
-            <Button
-              color='white'
-              type='submit'
-              bg='var(--some-blue)'
-              mt='var(--padding-xs)'
-              className='text--uppercase'
-            >contact agent</Button>
-          </Stack>
-        </Box>
+        <ContactForm buttonText='contact agent' />
       </Box>
     </Box>
   );

@@ -6,7 +6,7 @@ import { dividerMx } from '../../../utils/uiUtils';
 import CustomGrid from '../../utilities/CustomGrid';
 import { fillArray } from '../../../utils/arrayUtils';
 import usePageTitle from '../../../hooks/usePageTitle';
-import ContactAgentForm from '../../utilities/ContactAgentForm';
+import ContactAgentBox from '../../utilities/ContactAgentBox';
 import PropertyDetailsLHS from '../../utilities/PropertyDetailsLHS';
 import PropertyImagesAndSummary from '../../utilities/PropetyImagesAndSummary';
 import PropertyDetailsTopBanner from '../../utilities/PropertyDetailsTopBanner';
@@ -81,7 +81,7 @@ const PropertyDetailsPage = () => {
             pr: fillArray(2, '0px').concat('var(--padding-md)')
           }}
         />
-        <ContactAgentForm
+        <ContactAgentBox
           ml='auto'
           agent={property.agent}
           mr={fillArray(2, 'auto').concat('0px')}

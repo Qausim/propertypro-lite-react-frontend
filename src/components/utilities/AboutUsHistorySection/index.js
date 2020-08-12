@@ -4,11 +4,12 @@ import { Image, Text, Flex } from '@chakra-ui/core';
 import AppLogo from '../AppLogo';
 import { fillArray } from '../../../utils/arrayUtils';
 import SocialMediaLinkGroup from '../SocialMediaLinkGroup';
+import TwoColumnsWrapperGrid from '../TwoColumnsWrapperGrid';
 
 
 const AboutUsHistorySection = () => {
   return (
-    <>
+    <TwoColumnsWrapperGrid>
       <Image
         minH='70%'
         objectFit='cover'
@@ -62,7 +63,7 @@ const AboutUsHistorySection = () => {
           />
         </Flex>
       </Flex>
-    </>
+    </TwoColumnsWrapperGrid>
   );
 }
 
