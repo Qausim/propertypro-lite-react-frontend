@@ -1,0 +1,20 @@
+[class*='us-page'] .banner {
+  background-size: cover;
+  background-position-y: -12em !important;
+  background-repeat: no-repeat !important;
+  background: url(../../../assets/pexels-burak-k-1098982-sm.jpg);
+}
+
+@media screen and (min-width: 30em) {
+  [class*='us-page'] .banner {
+    background-position-y: -32em !important;
+    background: url(../../../assets/pexels-burak-k-1098982-md.jpg);
+  }  
+}
+
+@media screen and (min-width: 48em) {
+  [class*='us-page'] .banner {
+    background-position-y: -48em !important;
+    background: url(../../../assets/pexels-burak-k-1098982-lg.jpg);
+  }  
+}

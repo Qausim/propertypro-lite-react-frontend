@@ -18,6 +18,7 @@
 
 #root > main {
   flex-grow: 1;
+  padding-bottom: 2em;
 }
 
 body {
@@ -110,6 +111,24 @@ footer {
 .hover-shadow:hover {
   box-shadow: 0 8px 16px rgba(0,0,0,.25);
 }
+
+[class*='-us-page'] section:last-child {
+  margin-bottom: 2em;
+}
+
+[class*='-us-page'] section h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.property-details .contact-agent-form .icon,
+.property-details .property-location .icon,
+.property-details .property-features .icon,
+.feedback-form .icon {
+  color: var(--some-blue);
+}
+
 
 @media screen and (min-width: 768px) {
   .md-no-display {

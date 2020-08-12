@@ -3,9 +3,8 @@ import {
   Box, Heading, Tabs, TabList, TabPanels, Tab, TabPanel, Image, Text
 } from '@chakra-ui/core';
 
-import CustomGrid from '../CustomGrid';
 import { dividerMx } from '../../../utils/uiUtils';
-import { fillArray } from '../../../utils/arrayUtils';
+import TwoColumnsWrapperGrid from '../TwoColumnsWrapperGrid';
 
 
 const AboutUsOfficesSection = ({ mt }) => {
@@ -71,11 +70,7 @@ const AboutUsOfficesSection = ({ mt }) => {
       id='offices'
       px={dividerMx}
     >
-      <CustomGrid
-        rowGap='2.5em'
-        columnGap='2em'
-        colNumber={fillArray(2, 1).concat(2)}
-      >
+      <TwoColumnsWrapperGrid>
         <Tabs variant='unstyled' onChange={index => setTabIndex(index)}>
           <Heading as='h2'>office locations</Heading>
           <TabList mb='2em'>
@@ -90,7 +85,7 @@ const AboutUsOfficesSection = ({ mt }) => {
           src={offices[tabIndex].image}
           objectFit='cover'
         />
-      </CustomGrid>
+      </TwoColumnsWrapperGrid>
     </Box>
   );
 }

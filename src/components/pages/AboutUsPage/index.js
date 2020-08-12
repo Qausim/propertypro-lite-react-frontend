@@ -3,11 +3,11 @@ import { Box, Heading, Image, Text, Flex } from '@chakra-ui/core';
 
 import './AboutUsPage.css';
 import { dividerMx } from '../../../utils/uiUtils';
-import CustomGrid from '../../utilities/CustomGrid';
-import { fillArray } from '../../../utils/arrayUtils';
 import usePageTitle from '../../../hooks/usePageTitle';
 import SectionDivider from '../../utilities/SectionDivider';
 import AboutUsTopNavbar from '../../utilities/AboutUsTopNavbar';
+import PagePicturedBanner from '../../utilities/PagePicturedBanner';
+import TwoColumnsWrapperGrid from '../../utilities/TwoColumnsWrapperGrid';
 import AboutUsHistorySection from '../../utilities/AboutUsHistorySection';
 import AboutUsOfficesSection from '../../utilities/AboutUsOfficesSection';
 import AboutUsLeadershipSection from '../../utilities/AboutUsLeadershipSection';
@@ -17,34 +17,9 @@ import SeeOpportunitiesButtonWrapper from '../../utilities/SeeOpportunitiesButto
 const AboutUsPage = () => {
   usePageTitle('about us');
   const sectionMt = '2em';
-
-  const TwoColumnsWrapperGrid = ({ children }) => (
-    <CustomGrid
-      rowGap='2.5em'
-      columnGap='2em'
-      colNumber={fillArray(2, 1).concat(2)}
-    >
-      {children}
-    </CustomGrid>
-  );
-
   return (
     <Box className='about-us-page'>
-      <Box
-        h='14em'
-        d='flex'
-        px={dividerMx}
-        className='banner'
-        alignItems='center'
-      >
-        <Heading
-          as='h1'
-          color='white'
-          className='text--bold text--capitalize'
-        >
-          about us
-        </Heading>
-      </Box>
+      <PagePicturedBanner title='about us' />
       <AboutUsTopNavbar mt={sectionMt} />
 
       <Box
@@ -54,9 +29,7 @@ const AboutUsPage = () => {
         mt={sectionMt}
       >
         <Heading as='h2'>company history</Heading>
-        <TwoColumnsWrapperGrid>
-          <AboutUsHistorySection />
-        </TwoColumnsWrapperGrid>
+        <AboutUsHistorySection />
       </Box>
 
       <AboutUsLeadershipSection mt={sectionMt} />
