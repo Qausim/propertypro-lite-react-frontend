@@ -61,7 +61,10 @@ const ContactAgentForm = ({ agent, gridColumn, my, ml, mr }) => {
             />
           </Flex>
         </CustomGrid>
-        <ContactForm buttonText='contact agent' />
+        <ContactForm
+          mt='var(--padding-md)'
+          buttonText='contact agent'
+        />
       </Box>
     </Box>
   );

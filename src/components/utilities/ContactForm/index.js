@@ -3,13 +3,13 @@ import { FaUser } from 'react-icons/fa';
 import { Box, Stack, InputGroup, InputLeftAddon, Input, Icon, Textarea, Button } from '@chakra-ui/core';
 
 
-const ContactForm = ({ formClass, buttonText, spacingY }) => {
+const ContactForm = ({ formClass, buttonText, spacingY, mt }) => {
   return (
-    <Box as='form' className={formClass} mt='var(--padding-md)'>
+    <Box as='form' className={formClass} mt={mt}>
       <Stack spacing={spacingY}>
         <InputGroup>
           <InputLeftAddon>
-            <Box as={FaUser} className='icon' />
+            <Box as={FaUser} className='icon icon--blue' />
           </InputLeftAddon>
           <Input
             isRequired
@@ -21,7 +21,7 @@ const ContactForm = ({ formClass, buttonText, spacingY }) => {
         </InputGroup>
         <InputGroup>
           <InputLeftAddon>
-            <Icon name='email' className='icon' />
+            <Icon name='email' className='icon icon--blue' />
           </InputLeftAddon>
           <Input
             isRequired
@@ -33,7 +33,7 @@ const ContactForm = ({ formClass, buttonText, spacingY }) => {
         </InputGroup>
         <InputGroup>
           <InputLeftAddon>
-            <Icon name='phone' className='icon' />
+            <Icon name='phone' className='icon icon--blue' />
           </InputLeftAddon>
           <Input
             isRequired

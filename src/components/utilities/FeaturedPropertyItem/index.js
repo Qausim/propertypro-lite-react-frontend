@@ -3,7 +3,7 @@ import { FiPackage, FiKey, FiClock, FiCrop } from "react-icons/fi";
 import { Box, Image, Text, Flex, Icon, Tag } from "@chakra-ui/core";
 
 import "./FeaturedPropertyItem.css";
-import PropertyTagsWrapper from "../PropertyTagsWrapper";
+import PropertyTagWrapper from "../PropertyTagWrapper";
 import { formatMoneyValue } from "../../../utils/textUtils";
 import SectionDivider from "../SectionDivider";
 
@@ -18,14 +18,14 @@ const FeaturedPropertyItem = ({ property }) => {
 
   return (
     <Box bg="white" className="featured-property-item hover-shadow">
-      <PropertyTagsWrapper>
+      <PropertyTagWrapper>
         <Tag bg="green.500" color='white'>
           featured
         </Tag>
         <Tag bg='red.500' color='white'>
           {property.category}
         </Tag>
-      </PropertyTagsWrapper>
+      </PropertyTagWrapper>
       <Image
         w="100%"
         h="100%"

@@ -2,11 +2,6 @@
   color: var(--light-gray);
 }
 
-.property-details .images-and-summary-section .prices > *::before {
-  content: '₦';
-  margin-right: 4px;
-}
-
 .property-details .images-and-summary-section .prices :not(.text--deleted) {
   font-size: 2em;
 }

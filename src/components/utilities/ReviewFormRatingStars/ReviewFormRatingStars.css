@@ -1,0 +1,24 @@
+.review-form-rating-stars .star-wrapper {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  position: relative;
+}
+
+.review-form-rating-stars input {
+  z-index: 2;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.review-form-rating-stars:hover .star-wrapper .star,
+.review-form-rating-stars .star-wrapper.mark .star {
+  color: #ffee58;
+}
+
+.review-form-rating-stars .star-wrapper:hover ~ .star-wrapper .star,
+.review-form-rating-stars .star-wrapper {
+  color: #A0AEC0;
+}

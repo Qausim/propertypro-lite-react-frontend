@@ -122,11 +122,20 @@ footer {
   text-transform: capitalize;
 }
 
-.property-details .contact-agent-form .icon,
+.prices > .price::before {
+  content: '₦';
+  margin-right: 4px;
+}
+
 .property-details .property-location .icon,
 .property-details .property-features .icon,
-.feedback-form .icon {
-  color: var(--some-blue);
+.icon--blue {
+  color: var(--some-blue) !important;
+}
+
+.agent-profile section h3,
+.agent-profile form h3 {
+  font-size: 1.5em;
 }
 
 

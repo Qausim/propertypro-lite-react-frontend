@@ -40,7 +40,7 @@ const Footer = () => {
             title: "quick links",
             links: [
               { title: "About Us", link: "/about" },
-              { title: "Contact Us", link: "/" },
+              { title: "Contact Us", link: "/contact" },
             ],
           },
         ].map((footerSection, index) => {

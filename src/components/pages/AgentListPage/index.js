@@ -29,7 +29,7 @@ const AgentListPage = () => {
     ...fillArray(3, {
       type: 'agent',
       firstName: 'bola',
-      lastName: 'olaseinder',
+      lastName: 'olaseinde',
       address: '22 Bolaji Osikeye Street',
       city: 'lagos',
       state: 'lagos',
@@ -59,7 +59,7 @@ const AgentListPage = () => {
         colNumber={[1, 2, 3]}
       >
         {
-          agents.map((agent, index) => <AgentGridListItem key={index} agent={agent} />)
+          agents.map((agent, index) => <AgentGridListItem key={index} agent={agent} flexDirection='column' />)
         }
       </CustomGrid>
     </Box>

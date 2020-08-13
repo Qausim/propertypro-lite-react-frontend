@@ -51,6 +51,7 @@ const AboutUsOfficesSection = ({ mt }) => {
       <Tab
         key={index}
         className='text--capitalize'
+        _hover={{ bg: 'var(--some-green)', color: 'white' }}
         _selected={{ bg: 'var(--some-green)', color: 'white' }}
       >
         {title}
