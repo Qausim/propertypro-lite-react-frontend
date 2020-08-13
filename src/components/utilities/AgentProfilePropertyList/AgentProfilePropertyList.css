@@ -1,0 +1,9 @@
+.agent-profile-property-list-item .prices {
+  font-size: .9em;
+}
+
+.agent-profile-property-list-item .prices .price:not(.text--deleted) {
+  color: #000000;
+  font-size: 1.5em;
+  font-weight: 600;
+}

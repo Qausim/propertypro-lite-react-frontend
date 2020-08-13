@@ -6,8 +6,8 @@ import { Box, Flex, Text, Image, Heading } from '@chakra-ui/core';
 
 import Carousel from '../Carousel';
 import CustomGrid from '../CustomGrid';
+import PropertyPrices from '../PropertyPrices';
 import { fillArray } from '../../../utils/arrayUtils';
-import { formatMoneyValue } from '../../../utils/textUtils';
 import { getDefaultCarouselChevrons, dividerMx } from '../../../utils/uiUtils';
 
 
@@ -42,25 +42,7 @@ const PropertyImagesAndSummary = ({ property, py }) => {
           align='inherit'
           className='prices'
         >
-          {
-            (() => {
-              const { discount, price } = property;
-              const res = [];
-              const hasDiscount = discount > 0;
-              res.push((
-                <Text
-                  key={res.length + 1}
-                  mr={hasDiscount ? 'var(--padding-sm)' : 0}
-                  className={hasDiscount ? `text--deleted ` : ''}
-                >
-                  {formatMoneyValue(price)}
-                </Text>
-              ));
-              if (hasDiscount) res.push(<Text key={res.length + 1}>{formatMoneyValue(price * (1 - discount))}</Text>);
-
-              return res;
-            })()
-          }
+          <PropertyPrices {...{ property }} />
         </Flex>
       </Flex>
       <Carousel
