@@ -18,7 +18,7 @@ const PropertyGrid = ({ properties } = { properties: [] }) => {
     <CustomGrid
       className="property-grid"
       rowGap='var(--padding-md)'
-      colNumber={[1, ...fillArray(3, 2).concat(4)]}
+      colNumber={[1, 1, ...fillArray(2, 2).concat(4)]}
     >
       {properties.map((property, index) => {
         return (

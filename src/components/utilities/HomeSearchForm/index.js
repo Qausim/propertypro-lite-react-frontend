@@ -1,44 +1,170 @@
-import React from 'react';
-import { Flex, Button, Icon } from '@chakra-ui/core';
+import React, { useState } from 'react';
 import { useDispatch, connect } from 'react-redux';
+import { Flex, Button, Icon, InputGroup, InputLeftAddon, Box, FormLabel, Input, NumberInput, NumberInputField, Select, IconButton, Text, Tooltip } from '@chakra-ui/core';
 
 import './HomeSearchForm.css';
+import CustomGrid from '../CustomGrid';
 import SearchField from './SearchField';
+import { dividerMx } from '../../../utils/uiUtils';
+import MinMaxNumberInput from '../MinMaxNumberInput';
 import PropertyTypeRadios from './PropertyTypeRadios';
-import setPropertyFilter from '../../../store/propertiesModule/actions/setPropertyFilter';
+import { fillArray } from '../../../utils/arrayUtils';
+import AmenitiesCheckList from './AmenitiesCheckLists';
+import { formatMoneyValue } from '../../../utils/textUtils';
 import PropertyCategorySelect from './PropertyCategorySelect';
+import setPropertyFilter from '../../../store/propertiesModule/actions/setPropertyFilter';
 
 
 const HomeSearchForm = ({ filter }) => {
+  const [expandAdvanced, setExpandAdvanced] = useState(false)
   const dispatch = useDispatch();
   const setFilter = (newFilter) => dispatch(setPropertyFilter(newFilter));
   const childrenProp = { filter, setFilter };
+  const amenities = [
+    { id: 1, title: '24/7 power supply' },
+    { id: 2, title: 'security' },
+    { id: 3, title: 'balcony' },
+    { id: 4, title: 'basement' },
+    { id: 5, title: 'heating' },
+    { id: 13, title: 'cooling' },
+    { id: 6, title: 'cleaning service' },
+    { id: 7, title: 'elevator' },
+    { id: 8, title: 'fireplace' },
+    { id: 9, title: 'gym' },
+    { id: 10, title: 'pets allowed' },
+    { id: 11, title: 'spa' },
+    { id: 12, title: 'swimming pool' },
+    { id: 15, title: 'parking' },
+    { id: 14, title: 'wheelchair access' },
+  ];
+
   return (
     <form className='home-search-form' style={{ paddingTop: '4em' }}>
       <PropertyTypeRadios {...childrenProp} />
-      <Flex 
-        flexDir='column'
+      <Box
+        pos='relative'
         p='var(--padding-md)'
         className='form-control-group'
+        mx={fillArray(2, '0px').concat('var(--padding-md)')}
       >
-        <PropertyCategorySelect {...childrenProp} />
-        <SearchField {...childrenProp} />
-        <Button
-          size='lg'
-          color='white'
-          bg='var(--some-blue)'
-          py='var(--padding-sm)'
-          px='var(--padding-md)'
-          className='search-button text--capitalize'
+        <Flex
+          flexDir='column'
+          className='upper-group'
         >
-          <Icon name='search' mr='var(--padding-xs)' />
-          search
-        </Button>
-      </Flex>
+          <PropertyCategorySelect {...childrenProp} />
+          <SearchField {...childrenProp} />
+          <Button
+            size='lg'
+            color='white'
+            bg='var(--some-blue)'
+            py='var(--padding-sm)'
+            px='var(--padding-md)'
+            className='search-button text--capitalize'
+          >
+            <Icon name='search' mr='var(--padding-xs)' />
+            search
+          </Button>
+          <Flex
+            color='white'
+            align='center'
+            justify='center'
+            direction='column'
+            onClick={() => setExpandAdvanced(!expandAdvanced)}
+          >
+            <Text
+              display={fillArray(2, 'block').concat('none')}
+            >
+              {`${expandAdvanced ? 'Hide' : 'See'} advanced fields`}
+            </Text>
+            <Tooltip
+              hasArrow
+              bg='transparent'
+              placement='bottom'
+              color={fillArray(2, 'transparent').concat('white')}
+              label={`${expandAdvanced ? 'Hide' : 'See'} advanced fields`}
+            >
+              <IconButton
+                size='32px'
+                bg='transparent'
+                icon={`triangle-${expandAdvanced ? 'up' : 'down'}`}
+                aria-label='toggle advanced search fields visibility'
+              />
+            </Tooltip>
+          </Flex>
+        </Flex>
+        <Box
+          mt='2em'
+          pos='absolute'
+          px={['0px'].concat(dividerMx)}
+          className='advanced-search-group'
+          transform={expandAdvanced ? 'scaleY(1)' : 'scaleY(0)'}
+        >
+          <AmenitiesCheckList {...{ amenities }} />
+          <CustomGrid
+            mt='2em'
+            gap='2em'
+            colNumber={fillArray(2, 1).concat(3)}
+          >
+            <InputGroup>
+              <InputLeftAddon>
+                <FormLabel htmlFor='city' className='text--capitalize'>city:</FormLabel>
+              </InputLeftAddon>
+              <Input
+                id='city'
+                name='city'
+                type='text'
+                bg='#EDF2F7'
+                placeholder='e.g Lagos'
+              />
+            </InputGroup>
+            {
+              (() => {
+                const min = 100000;
+                const max = 20000000;
+                const prepend = '₦';
+                const label = 'Price';
+                const ariaLabel = 'property price range';
+                const placeholder = [min, max].map(amt => `₦ ${formatMoneyValue(amt)}`).join(' - ');
+                return <MinMaxNumberInput {...{ min, max, label, prepend, ariaLabel, placeholder }} />;
+              })()
+            }
+            {
+              (() => {
+                const min = 2000;
+                const max = 5000;
+                const label = 'Area';
+                const append = 'sq ft';
+                const ariaLabel = 'property area range';
+                const placeholder = [min, max].map(value => value).join(' - ');
+                return <MinMaxNumberInput {...{ min, max, label, append, ariaLabel, placeholder }} />;
+              })()
+            }
+            <InputGroup d='flex'>
+              <InputLeftAddon>Beds: </InputLeftAddon>
+              <NumberInput flexGrow={1} aria-label='number of bedrooms'>
+                <NumberInputField bg='#EDF2F7' />
+              </NumberInput>
+            </InputGroup>
+            <InputGroup d='flex'>
+              <InputLeftAddon>Baths: </InputLeftAddon>
+              <NumberInput flexGrow={1} aria-label='number of bathrooms'>
+                <NumberInputField bg='#EDF2F7' />
+              </NumberInput>
+            </InputGroup>
+            <Select placeholder='Target type' className='text--capitalize'>
+              {
+                ['rent', 'buy', 'lease'].map((each, index) => {
+                  return <option key={index} value={each}>{each}</option>
+                })
+              }
+            </Select>
+          </CustomGrid>
+        </Box>
+      </Box>
     </form>
   );
 };
 
 const mapStateToProps = ({ properties: { filter } }, ownProps) => ({ filter, ...ownProps });
- 
+
 export default connect(mapStateToProps)(HomeSearchForm);
