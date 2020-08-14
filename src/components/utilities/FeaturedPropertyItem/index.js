@@ -1,13 +1,15 @@
 import React from "react";
+import { withRouter, Link as RouterLink } from "react-router-dom";
 import { FiPackage, FiKey, FiClock, FiCrop } from "react-icons/fi";
-import { Box, Image, Text, Flex, Icon, Tag } from "@chakra-ui/core";
+import { Box, Image, Text, Flex, Icon, Tag, Link } from "@chakra-ui/core";
 
 import "./FeaturedPropertyItem.css";
+import SectionDivider from "../SectionDivider";
+import { routes } from "../../../utils/constants";
 import PropertyTagWrapper from "../PropertyTagWrapper";
 import { formatMoneyValue } from "../../../utils/textUtils";
-import SectionDivider from "../SectionDivider";
 
-const FeaturedPropertyItem = ({ property }) => {
+const FeaturedPropertyItem = ({ property, history }) => {
   const childBorder = "1px solid #CCC";
   const icons = {
     rooms: FiKey,
@@ -17,7 +19,15 @@ const FeaturedPropertyItem = ({ property }) => {
   };
 
   return (
-    <Box bg="white" className="featured-property-item hover-shadow">
+    <Link
+      d='block'
+      bg="white"
+      role='link'
+      as={RouterLink}
+      _hover={{ textDecor: 'none' }}
+      to={`${routes.properties}/ldlddldl`}
+      className="featured-property-item hover-shadow"
+    >
       <PropertyTagWrapper>
         <Tag bg="green.500" color='white'>
           featured
@@ -85,8 +95,8 @@ const FeaturedPropertyItem = ({ property }) => {
           })()}
         </Flex>
       </Box>
-    </Box>
+    </Link>
   );
 };
 
-export default FeaturedPropertyItem;
+export default withRouter(FeaturedPropertyItem);

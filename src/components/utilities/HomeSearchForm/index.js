@@ -51,7 +51,7 @@ const HomeSearchForm = ({ filter }) => {
           className='form-control-group default-fields'
           mx={fillArray(2, '0px').concat('var(--padding-md)')}
         >
-          <PropertyCategorySelect {...childrenProp} />
+          <PropertyCategorySelect size='lg' {...childrenProp} />
           <SearchField {...childrenProp} />
           <Button
             size='lg'

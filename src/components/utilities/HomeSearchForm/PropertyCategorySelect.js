@@ -2,7 +2,7 @@ import React from 'react';
 import { Select } from '@chakra-ui/core';
 
 
-const PropertyCategorySelect = ({ filter, setFilter }) => {
+const PropertyCategorySelect = ({ bg, size, filter, setFilter }) => {
   const categories = [
     { value: 'land', text: 'lands' },
     { value: 'apartment', text: 'apartments' },
@@ -11,7 +11,8 @@ const PropertyCategorySelect = ({ filter, setFilter }) => {
 
   return (
     <Select
-      size='lg'
+      bg={bg}
+      size={size}
       className='text--capitalize'
       onChange={({ target: { value } }) => setFilter({ ...filter, category: value })}
     >
