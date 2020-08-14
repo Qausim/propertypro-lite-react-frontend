@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import { useDispatch, connect } from 'react-redux';
-import { Flex, Button, Icon, InputGroup, InputLeftAddon, Box, FormLabel, Input, NumberInput, NumberInputField, Select, IconButton, Text, Tooltip } from '@chakra-ui/core';
+import {
+  Flex, Button, Icon, InputGroup, InputLeftAddon, Box, FormLabel, Input, NumberInput,
+  NumberInputField, Select, IconButton, Text, Tooltip
+} from '@chakra-ui/core';
 
 import './HomeSearchForm.css';
 import CustomGrid from '../CustomGrid';
 import SearchField from './SearchField';
 import { dividerMx } from '../../../utils/uiUtils';
-import MinMaxNumberInput from '../MinMaxNumberInput';
+import AreaMinMaxFields from '../AreaMinMaxFields';
+import PriceMinMaxFields from '../PriceMinMaxFields';
 import PropertyTypeRadios from './PropertyTypeRadios';
 import { fillArray } from '../../../utils/arrayUtils';
 import AmenitiesCheckList from './AmenitiesCheckLists';
-import { formatMoneyValue } from '../../../utils/textUtils';
 import PropertyCategorySelect from './PropertyCategorySelect';
 import setPropertyFilter from '../../../store/propertiesModule/actions/setPropertyFilter';
 
@@ -41,15 +44,12 @@ const HomeSearchForm = ({ filter }) => {
   return (
     <form className='home-search-form' style={{ paddingTop: '4em' }}>
       <PropertyTypeRadios {...childrenProp} />
-      <Box
-        pos='relative'
-        p='var(--padding-md)'
-        className='form-control-group'
-        mx={fillArray(2, '0px').concat('var(--padding-md)')}
-      >
+      <Box pos='relative'>
         <Flex
           flexDir='column'
-          className='upper-group'
+          p='var(--padding-md)'
+          className='form-control-group default-fields'
+          mx={fillArray(2, '0px').concat('var(--padding-md)')}
         >
           <PropertyCategorySelect {...childrenProp} />
           <SearchField {...childrenProp} />
@@ -92,12 +92,22 @@ const HomeSearchForm = ({ filter }) => {
             </Tooltip>
           </Flex>
         </Flex>
+      </Box>
+      <Flex
+        zIndex={2}
+        pos='relative'
+        justify='center'
+        transition='transform .2s'
+        transform={expandAdvanced ? 'scaleY(1)' : 'scaleY(0)'}
+      >
         <Box
-          mt='2em'
+          pt='2em'
+          pb='1em'
           pos='absolute'
           px={['0px'].concat(dividerMx)}
-          className='advanced-search-group'
-          transform={expandAdvanced ? 'scaleY(1)' : 'scaleY(0)'}
+          className='advanced-search-group form-control-group'
+          //p='var(--padding-md)'
+          mx={fillArray(2, '0px').concat('var(--padding-md)')}
         >
           <AmenitiesCheckList {...{ amenities }} />
           <CustomGrid
@@ -117,30 +127,10 @@ const HomeSearchForm = ({ filter }) => {
                 placeholder='e.g Lagos'
               />
             </InputGroup>
-            {
-              (() => {
-                const min = 100000;
-                const max = 20000000;
-                const prepend = '₦';
-                const label = 'Price';
-                const ariaLabel = 'property price range';
-                const placeholder = [min, max].map(amt => `₦ ${formatMoneyValue(amt)}`).join(' - ');
-                return <MinMaxNumberInput {...{ min, max, label, prepend, ariaLabel, placeholder }} />;
-              })()
-            }
-            {
-              (() => {
-                const min = 2000;
-                const max = 5000;
-                const label = 'Area';
-                const append = 'sq ft';
-                const ariaLabel = 'property area range';
-                const placeholder = [min, max].map(value => value).join(' - ');
-                return <MinMaxNumberInput {...{ min, max, label, append, ariaLabel, placeholder }} />;
-              })()
-            }
+            <PriceMinMaxFields min={100000} max={20000000} />
+            <AreaMinMaxFields min={2000} max={5000} />
             <InputGroup d='flex'>
-              <InputLeftAddon>Beds: </InputLeftAddon>
+              <InputLeftAddon>Rooms: </InputLeftAddon>
               <NumberInput flexGrow={1} aria-label='number of bedrooms'>
                 <NumberInputField bg='#EDF2F7' />
               </NumberInput>
@@ -160,7 +150,7 @@ const HomeSearchForm = ({ filter }) => {
             </Select>
           </CustomGrid>
         </Box>
-      </Box>
+      </Flex>
     </form>
   );
 };

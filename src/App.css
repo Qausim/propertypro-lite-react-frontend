@@ -18,6 +18,9 @@
 
 #root > main {
   flex-grow: 1;
+}
+
+#root > main > div:not(.homepage) {
   padding-bottom: 2em;
 }
 
