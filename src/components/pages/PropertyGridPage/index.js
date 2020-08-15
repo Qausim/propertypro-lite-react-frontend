@@ -13,6 +13,7 @@ import PriceAndAreaFieldsOrder from '../../utilities/PriceAndAreaFieldsOrder';
 
 
 const PropertyGridPage = () => {
+  const inputBackground = '#EDF2F7';
   return (
     <Box
       mt='5em'
@@ -28,7 +29,7 @@ const PropertyGridPage = () => {
       </Heading>
       <GridPageSearchForm
         p='1em'
-        inputBackground='#EDF2F7'
+        {...{ inputBackground }}
       />
       <Box
         mt='5em'
@@ -59,7 +60,7 @@ const PropertyGridPage = () => {
               />
               <Text>Reset search</Text>
             </Button>
-            <PriceAndAreaFieldsOrder />
+            <PriceAndAreaFieldsOrder bg={inputBackground} />
           </Flex>
         </CustomGrid>
         <CustomGrid
