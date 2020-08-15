@@ -1,14 +1,20 @@
 import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import { FiHome, FiDollarSign } from 'react-icons/fi';
-import { Box, Image, Text, Icon, Flex } from '@chakra-ui/core';
+import { Box, Image, Text, Icon, Flex, Link } from '@chakra-ui/core';
 
 import { formatMoneyValue } from '../../../utils/textUtils';
+import { routes } from '../../../utils/constants';
 
 
 const CitySummaryStatItem = ({ city }) => {
   const childBorder = '1px solid #CCC';
   return (
-    <Box className='city-summary-stat-item'>
+    <Link
+      as={RouterLink}
+      to={`${routes.properties}?city=${city.name}`}
+      className='city-summary-stat-item hover-no-text-decor'
+    >
       <Image
         w='100%'
         h='300px'
@@ -39,7 +45,7 @@ const CitySummaryStatItem = ({ city }) => {
           <span className='text--bold'>price:</span>&nbsp;₦{formatMoneyValue(city.minPrice)} - ₦{formatMoneyValue(city.maxPrice)}
         </Flex>
       </Box>
-    </Box>
+    </Link>
   );
 }
  

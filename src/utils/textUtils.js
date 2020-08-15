@@ -13,3 +13,14 @@ export const capitalize = (str) => {
     .map(el => toTitleCase(el))
     .join(' ');
 };
+
+export const breakdownQueryParams = (queryString) => {
+  const queryObject = {};
+  const keyValueString = queryString.replace('?', '').split('&');
+  keyValueString.forEach(each => {
+    const [key, value] = each.split('=');
+    queryObject[key] = decodeURIComponent(value || '');
+  });
+
+  return queryObject;
+};

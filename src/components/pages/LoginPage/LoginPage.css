@@ -1,0 +1,27 @@
+.login-page h1,
+.login-form button {
+  text-transform: uppercase;
+}
+
+.login-form label {
+  height: unset;
+}
+
+.login-form a,
+.login-form label {
+  text-transform: capitalize;  
+}
+
+.login-form .input-wrapper {
+  width: unset;
+  height: unset;
+  background: #EDF2F7 !important;
+}
+
+.login-form .input-wrapper input {
+  background: inherit;
+}
+
+.login-form .input-wrapper:focus-within {
+  border: 2.5px solid var(--some-blue);
+}

@@ -1,5 +1,8 @@
 import React from 'react';
-import { InputGroup, InputLeftAddon, FormLabel, Input, NumberInput, NumberInputField, Select } from '@chakra-ui/core';
+import { withRouter } from 'react-router-dom';
+import {
+  InputGroup, InputLeftAddon, FormLabel, Input, NumberInput, NumberInputField, Select
+} from '@chakra-ui/core';
 
 import CustomGrid from '../CustomGrid';
 import AreaMinMaxFields from '../AreaMinMaxFields';
@@ -7,9 +10,11 @@ import PriceMinMaxFields from '../PriceMinMaxFields';
 import { fillArray } from '../../../utils/arrayUtils';
 import PropertyAmenitiesSelect from '../PropertyAmenitiesSelect';
 import PropertyCategorySelect from '../HomeSearchForm/PropertyCategorySelect';
+import { breakdownQueryParams } from '../../../utils/textUtils';
 
 
-const GridPageSearchForm = ({ p, inputBackground }) => {
+const GridPageSearchForm = ({ p, history: { location: { search } }, inputBackground }) => {
+  const queryParams = breakdownQueryParams(search);
   return (
     <CustomGrid
       p={p}
@@ -28,6 +33,8 @@ const GridPageSearchForm = ({ p, inputBackground }) => {
           type='text'
           bg={inputBackground}
           placeholder='e.g Lagos'
+          value={queryParams.city || ''}
+          onChange={() => {}}
         />
       </InputGroup>
       <PropertyCategorySelect bg={inputBackground} />
@@ -61,4 +68,4 @@ const GridPageSearchForm = ({ p, inputBackground }) => {
   );
 }
 
-export default GridPageSearchForm;
+export default withRouter(GridPageSearchForm);

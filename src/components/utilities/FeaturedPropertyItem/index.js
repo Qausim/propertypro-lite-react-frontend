@@ -24,9 +24,8 @@ const FeaturedPropertyItem = ({ property, history }) => {
       bg="white"
       role='link'
       as={RouterLink}
-      _hover={{ textDecor: 'none' }}
       to={`${routes.properties}/ldlddldl`}
-      className="featured-property-item hover-shadow"
+      className="featured-property-item hover-shadow hover-no-text-decor"
     >
       <PropertyTagWrapper>
         <Tag bg="green.500" color='white'>
