@@ -8,7 +8,6 @@ import {
 import './HomeSearchForm.css';
 import CustomGrid from '../CustomGrid';
 import SearchField from './SearchField';
-import { dividerMx } from '../../../utils/uiUtils';
 import AreaMinMaxFields from '../AreaMinMaxFields';
 import PriceMinMaxFields from '../PriceMinMaxFields';
 import PropertyTypeRadios from './PropertyTypeRadios';
@@ -104,7 +103,7 @@ const HomeSearchForm = ({ filter }) => {
           pt='2em'
           pb='1em'
           pos='absolute'
-          px={['0px'].concat(dividerMx)}
+          px='var(--padding-md)'
           className='advanced-search-group form-control-group'
           //p='var(--padding-md)'
           mx={fillArray(2, '0px').concat('var(--padding-md)')}

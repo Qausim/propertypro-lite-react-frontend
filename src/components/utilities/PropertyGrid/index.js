@@ -3,11 +3,13 @@ import React from "react";
 import { GiHomeGarage } from 'react-icons/gi';
 import { FaBed, FaBath } from 'react-icons/fa';
 import { BsClockHistory } from 'react-icons/bs';
-import { Box, Image, Text, Flex } from "@chakra-ui/core";
+import { Link as RouterLink } from 'react-router-dom';
+import { Box, Image, Text, Flex, Link } from "@chakra-ui/core";
 
 import CustomGrid from "../CustomGrid";
 import SectionDivider from "../SectionDivider";
 import { fillArray } from "../../../utils/arrayUtils";
+import { routes } from "../../../utils/constants";
 
 const PropertyGrid = ({ properties } = { properties: [] }) => {
   const icons = {
@@ -22,10 +24,12 @@ const PropertyGrid = ({ properties } = { properties: [] }) => {
     >
       {properties.map((property, index) => {
         return (
-          <Box
+          <Link
             key={index}
+            as={RouterLink}
             p='var(--padding-sm)'
-            className="property-grid-item hover-shadow"
+            to={`${routes.properties}/dldldldld`}
+            className="property-grid-item hover-shadow hover-no-text-decor"
           >
             <Image
               w="100%"
@@ -59,7 +63,7 @@ const PropertyGrid = ({ properties } = { properties: [] }) => {
                 ))
               }
             </CustomGrid>
-          </Box>
+          </Link>
         );
       })}
     </CustomGrid>
