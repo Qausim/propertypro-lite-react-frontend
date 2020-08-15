@@ -3,6 +3,7 @@ import { Box, Heading } from '@chakra-ui/core';
 
 import './LoginPage.css';
 import LoginForm from '../../utilities/LoginForm';
+import { dividerMx } from '../../../utils/uiUtils';
 
 
 const LoginPage = () => {
@@ -10,6 +11,7 @@ const LoginPage = () => {
     <Box
       pt='5em'
       mb='8em'
+      mx={dividerMx}
       className='login-page'
     >
       <Heading

@@ -50,10 +50,17 @@ const LoginForm = () => {
             size='lg'
             name='rememberMe'
           />
-          <FormLabel ml='.5em' htmlFor='rememberMe'>remember me</FormLabel>
+          <FormLabel
+            pb='0px'
+            ml='.5em'
+            htmlFor='rememberMe'
+          >
+            remember me
+          </FormLabel>
         </Flex>
         <Link
           as={RouterLink}
+          mt={['.5em', '0px']}
           ml={['0px', 'auto']}
           to={routes.forgotPassword}
           gridColumn={['1/2', '2/3']}
