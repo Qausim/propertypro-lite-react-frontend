@@ -4,6 +4,7 @@
 }
 
 .login-form label {
+  width: unset;
   height: unset;
 }
 
