@@ -11,6 +11,7 @@ export const routes = {
   signup: '/signup',
   contact: '/contact',
   properties: propertyRouteRoot,
+  forgotPassword: '/forgot-password',
   singleProperty: `${propertyRouteRoot}/:slug`
 };
 

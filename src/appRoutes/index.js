@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 
 import { routes } from '../utils/constants';
 import HomePage from '../components/pages/HomePage';
+import LoginPage from '../components/pages/LoginPage';
 import AboutUsPage from '../components/pages/AboutUsPage';
 import AgentListPage from '../components/pages/AgentListPage';
 import ContactUsPage from '../components/pages/ContactUsPage'; 
@@ -21,6 +22,7 @@ const AppRoutes = () => {
       <Route exact path={`${routes.agents}/:slug`} component={AgentProfilePage} />
       <Route exact path={routes.contact} component={ContactUsPage} />
       <Route exact path={routes.properties} component={PropertyGridPage} />
+      <Route exact path={routes.login} component={LoginPage} />
     </>
   );
 }

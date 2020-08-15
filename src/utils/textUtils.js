@@ -19,7 +19,7 @@ export const breakdownQueryParams = (queryString) => {
   const keyValueString = queryString.replace('?', '').split('&');
   keyValueString.forEach(each => {
     const [key, value] = each.split('=');
-    queryObject[key] = value;
+    queryObject[key] = decodeURIComponent(value || '');
   });
 
   return queryObject;
